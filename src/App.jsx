@@ -26,7 +26,6 @@ const App = () => {
   }, []);
 
   const onSearchByCriteria = (selectedValue, selectedSentence) => {
-    console.log(selectedValue, selectedSentence);
     fetch(
       `https://www.thecocktaildb.com/api/json/v1/1/filter.php?${selectedValue}`
     )
@@ -40,7 +39,7 @@ const App = () => {
   return (
     <div className='app'>
       <Age />
-      <BrowserRouter>
+      <BrowserRouter basename={'/projets/kokomo'}>
         <Header />
         <Switch>
           <Route exact path='/'>
